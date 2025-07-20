@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Contacts from "./Contacts";
 
 interface Props {
   className?: string;
@@ -22,7 +23,7 @@ export default function Header({ className }: Props) {
             />
             Цены
             </a>
-            {/* <Contacts showTelegram={false} className="flex justify-end"/> */}
+            <Contacts showTelegram={false} className="flex justify-end"/>
         </section>
     </header>
   );

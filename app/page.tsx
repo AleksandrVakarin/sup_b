@@ -1,103 +1,191 @@
 import Image from "next/image";
+import data from "@/app/data/data.json";
+import { FaMapMarkerAlt, FaQuestionCircle, FaThumbsUp } from "react-icons/fa";
+import Contacts from "@/components/Contacts";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen bg-blue-50">
+      {/* Hero Section */}
+      <div className="relative h-96">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/images/sup-2.jpeg"
+          alt="Аренда SUP-бордов в Сургуте"
+          fill
+          className="object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="absolute inset-0 bg-blue-900/60 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Аренда SUP-бордов в Сургуте
+            </h1>
+            <p className="text-xl md:text-2xl">
+              Качественные доски с полной экипировкой
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12">
+        {/* Услуги */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            Наши услуги
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data.services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold text-blue-700">{service}</h3>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Преимущества */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            Почему выбирают нас
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data.advantages.map((advantage, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md flex items-start"
+              >
+                <FaThumbsUp className="text-blue-500 text-2xl mt-1 mr-4" />
+                <p className="text-lg">{advantage}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Цены */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            Прайс-лист
+          </h2>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <table className="w-full">
+              <thead className="bg-blue-700 text-white">
+                <tr>
+                  <th className="p-4 text-left">Услуга</th>
+                  <th className="p-4 text-left">Описание</th>
+                  <th className="p-4 text-right">Цена</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.prices.map((item, index) => (
+                  <tr
+                    key={index}
+                    className={index % 2 === 0 ? "bg-blue-50" : "bg-white"}
+                  >
+                    <td className="p-4 font-medium">{item.service}</td>
+                    <td className="p-4 text-gray-600">{item.description}</td>
+                    <td className="p-4 text-right font-bold text-blue-700">
+                      {item.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Локации */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            Где нас найти
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {data.locations.map((location, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md"
+              >
+                <div className="flex items-center mb-4">
+                  <FaMapMarkerAlt className="text-red-500 text-2xl mr-3" />
+                  <h3 className="text-xl font-semibold">{location.name}</h3>
+                </div>
+                <p className="text-gray-600 mb-4">{location.address}</p>
+                <a
+                  href={`https://yandex.ru/maps/?pt=${location.coordinates[1]},${location.coordinates[0]}&z=15`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  Посмотреть на карте
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            Частые вопросы
+          </h2>
+          <div className="space-y-4">
+            {data.faq.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-md"
+              >
+                <div className="flex items-start">
+                  <FaQuestionCircle className="text-blue-500 text-xl mt-1 mr-4" />
+                  <div>
+                    <h3 className="text-lg font-medium">{item.question}</h3>
+                    <p className="mt-2 text-gray-600">{item.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Контакты */}
+        <section className="text-center">
+          <h2 className="text-3xl font-bold mb-8 text-blue-800">
+            Как с нами связаться
+          </h2>
+          <Contacts className="justify-center" />
+          <div className="mt-6 flex justify-center space-x-6">
+            <a
+              href={data.social_media.vk}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-900"
+            >
+              <span className="sr-only">VK</span>
+              {/* <Image
+                src="/icons/vk.svg"
+                alt="VK"
+                width={32}
+                height={32}
+              /> */}
+            </a>
+            <a
+              href={data.social_media.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-900"
+            >
+              <span className="sr-only">Instagram</span>
+              {/* <Image
+                src="/icons/instagram.svg"
+                alt="Instagram"
+                width={32}
+                height={32}
+              /> */}
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

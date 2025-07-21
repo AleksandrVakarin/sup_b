@@ -95,7 +95,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Прайс-лист
           </h2>
-          <div className="bg-white rounded-lg shadow-md overflow-hidden text-gray-700">
+          <div className="bg-white rounded-lg shadow-md overflow-y-auto text-gray-700">
             <table className="w-full">
               <thead className="bg-gray-800 text-white">
                 <tr>

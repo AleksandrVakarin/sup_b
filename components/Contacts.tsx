@@ -47,7 +47,7 @@ export default function Contacts({
 
       {showTelegram && (
         <a
-          className="rounded-full border border-solid border-white transition-colors flex items-center justify-center bg-transparent text-white hover:bg-white/10 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+          className="rounded-full border border-solid border-white transition-colors flex items-center justify-center bg-transparent text-white hover:bg-white/10 font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
           href={`https://t.me/${telegram}`}
           target="_blank"
           rel="noopener noreferrer"

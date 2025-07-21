@@ -1,13 +1,12 @@
 import Image from "next/image";
 import data from "@/app/data/data.json";
 import { FaMapMarkerAlt, FaQuestionCircle, FaThumbsUp } from "react-icons/fa";
-import Contacts from "@/components/Contacts";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-blue-50">
+    <div className="min-h-screen rounded-xl bg-blue-50 font-[family-name:var(--font-geist-sans)]">
       {/* Hero Section */}
-      <div className="relative h-96">
+      <section className="relative h-96">
         <Image
           src="/images/sup-2.jpeg"
           alt="Аренда SUP-бордов в Сургуте"
@@ -15,7 +14,7 @@ export default function Home() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-blue-900/60 flex items-center justify-center">
+        <div className="absolute inset-0 bg-blue-950/50 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Аренда SUP-бордов в Сургуте
@@ -25,13 +24,40 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
+
+      <article className="flex flex-wrap items-center container text-[22px] mx-auto px-4 py-8 text-blue-700 font-[family-name:var(--font-geist-mono)]">
+         <Image
+            src="/images/pasport.png"
+            alt="Пасспорт"
+            width={40}
+            height={40}
+            className="m-4"
+            />
+        <b className="p-4 text-gray-800">Паспорт &nbsp;</b>
+        <p className="text-gray-600">
+          Для составления договора проката нам будет нужен ваш паспорт
+        </p>
+      </article>
+      <article className="flex flex-wrap items-center container text-[22px] mx-auto px-4 py-8 text-blue-700 font-[family-name:var(--font-geist-mono)]">
+        <Image
+            src="/images/money.png"
+            alt="Залог"
+            width={40}
+            height={40}
+            className="m-4"
+            />
+        <b className="p-4 text-gray-800">Залог &nbsp;</b>
+        <p className="text-gray-600">
+          Денежный залог: 10 000 рублей за доску
+        </p>
+      </article>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-12 ">
         {/* Услуги */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Наши услуги
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -40,7 +66,7 @@ export default function Home() {
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-xl font-semibold text-blue-700">{service}</h3>
+                <h3 className="text-xl font-semibold text-gray-700">{service}</h3>
               </div>
             ))}
           </div>
@@ -48,14 +74,14 @@ export default function Home() {
 
         {/* Преимущества */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Почему выбирают нас
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.advantages.map((advantage, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-md flex items-start"
+                className="bg-white p-6 rounded-lg shadow-md flex items-center text-gray-800"
               >
                 <FaThumbsUp className="text-blue-500 text-2xl mt-1 mr-4" />
                 <p className="text-lg">{advantage}</p>
@@ -65,13 +91,13 @@ export default function Home() {
         </section>
 
         {/* Цены */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+        <section id="prices" className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Прайс-лист
           </h2>
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden text-gray-700">
             <table className="w-full">
-              <thead className="bg-blue-700 text-white">
+              <thead className="bg-gray-800 text-white">
                 <tr>
                   <th className="p-4 text-left">Услуга</th>
                   <th className="p-4 text-left">Описание</th>
@@ -98,10 +124,10 @@ export default function Home() {
 
         {/* Локации */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Где нас найти
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
             {data.locations.map((location, index) => (
               <div
                 key={index}
@@ -127,10 +153,10 @@ export default function Home() {
 
         {/* FAQ */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
             Частые вопросы
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-4 text-gray-700">
             {data.faq.map((item, index) => (
               <div
                 key={index}
@@ -147,45 +173,7 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        {/* Контакты */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold mb-8 text-blue-800">
-            Как с нами связаться
-          </h2>
-          <Contacts className="justify-center" />
-          <div className="mt-6 flex justify-center space-x-6">
-            <a
-              href={data.social_media.vk}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 hover:text-blue-900"
-            >
-              <span className="sr-only">VK</span>
-              {/* <Image
-                src="/icons/vk.svg"
-                alt="VK"
-                width={32}
-                height={32}
-              /> */}
-            </a>
-            <a
-              href={data.social_media.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 hover:text-blue-900"
-            >
-              <span className="sr-only">Instagram</span>
-              {/* <Image
-                src="/icons/instagram.svg"
-                alt="Instagram"
-                width={32}
-                height={32}
-              /> */}
-            </a>
-          </div>
-        </section>
-      </div>
+      </main>
     </div>
   );
 }

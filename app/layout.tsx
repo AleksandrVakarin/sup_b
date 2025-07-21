@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
-import H1 from "@/components/h1";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -55,11 +54,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/vercel.svg', type: 'image/svg+xml' },
-      { url: '/zap.png', type: 'image/png' },
+      { url: '/sup.svg', type: 'image/svg+xml' },
+      { url: '/sup_png.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/icons/icon-256.png', sizes: '256x256', type: 'image/png' },  // Для iOS
+      { url: '/sup_png.png', sizes: '256x256', type: 'image/png' },  // Для iOS
     ],
   },
 };

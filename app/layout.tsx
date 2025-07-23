@@ -123,7 +123,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-1`}
       >
-        <Header />
+        <Header className="sticky top-0 backdrop-blur-md z-10"/>
         {children}
         <Footer />
         {/* <Analytics /> */}

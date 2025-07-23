@@ -54,7 +54,7 @@ export default function Home() {
       </article>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-12 ">
+      <main className="container mx-auto px-4 py-12">
         {/* Услуги */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">

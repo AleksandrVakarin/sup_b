@@ -34,15 +34,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Аренда SUP-бордов в Сургуте | Круглосуточный прокат",
     description: "Прокат SUP-досок для отдыха на воде. Полный комплект оборудования, помощь в обучении.",
-    // url: "https://your-sup-rental-site.com",
+    url: "https://sup-b.vercel.app/",
     siteName: "SUP Прокат Сургут",
     locale: "ru_RU",
     type: "website",
   },
   alternates: {
-    // canonical: "https://electric-navy-theta.vercel.app",
+    canonical: "https://sup-b.vercel.app/",
   },
-  // metadataBase: new URL("https://electric-navy-theta.vercel.app"),
+  metadataBase: new URL("https://sup-b.vercel.app/"),
   robots: {
     index: true,
     follow: true,
@@ -68,9 +68,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Rent Sup board",
   "name": "Аренда сап бордов в сургуте",
-  // "image": "https://electric-navy-theta.vercel.app/zap.png",
-  // "@id": "https://electric-navy-theta.vercel.app",
-  // "url": "https://electric-navy-theta.vercel.app",
+  "image": "https://sup-b.vercel.app/sup_png.png",
+  "@id": "https://sup-b.vercel.app/",
+  "url": "https://sup-b.vercel.app/",
   "telephone": "+7XXX-XXX-XX-XX",
   "priceRange": "от 1500",
   "address": {

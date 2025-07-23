@@ -3,4 +3,4 @@ Allow: /
 Disallow: /private/
 Disallow: /api/
 
-Sitemap: https://electric-navy-theta.vercel.app/sitemap.xml
+Sitemap: https://sup-b.vercel.app/sitemap.xml

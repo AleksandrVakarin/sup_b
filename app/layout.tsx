@@ -4,6 +4,7 @@ import "./globals.css";
 import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -126,7 +127,7 @@ export default function RootLayout({
         <Header className="sticky top-0 backdrop-blur-md z-10"/>
         {children}
         <Footer />
-        {/* <Analytics /> */}
+        <Analytics />
       </body>
     </html>
   );
